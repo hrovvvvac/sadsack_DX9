@@ -1,0 +1,24 @@
+# Ignore Pattern eine auswahl und beispiele von ignore pattern findet man auch hier
+# https://github.com/x3ro/gitignore
+
+#Project
+/Logs/*
+
+#FatAssets
+Assets/FatAssets/
+
+#vvvv
+*~.xml
+
+# Dynamic Plugins
+*._dynamic_.*.dll
+*.pdb
+
+#Visual Studio
+obj
+*.suo
+*.user
+
+#Windows
+*.db
+Desktop.ini
