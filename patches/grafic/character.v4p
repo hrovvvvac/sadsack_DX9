@@ -1,0 +1,643 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv45beta34.2.dtd" >
+   <PATCH nodename="X:\meso\dx11test\patches\grafic\character.v4p" systemname="character" filename="X:\meso\dx11test\patches\grafic\character.v4p" scrollx="0" scrolly="621">
+   <BOUNDS type="Window" left="225" top="0" width="14550" height="21780">
+   </BOUNDS>
+   <PACK Name="addonpack" Version="34.1.0">
+   </PACK>
+   <NODE systemname="Group (EX9 Priority)" nodename="Group (EX9 Priority)" componentmode="Hidden" id="30">
+   <BOUNDS type="Node" left="1260" top="20070" width="11340" height="270">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer Template Count" slicecount="1" values="6">
+   </PIN>
+   <PIN pinname="Layer 4" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 3" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Layer 6" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Priority 6" slicecount="1" values="2">
+   </PIN>
+   <PIN pinname="Layer 5" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="212" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="1770" top="1170" width="1725" height="255">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1770" top="1170" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\3dobj\sadsack10.dae">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="|COLLADA Files (*.dae)||*.dae|">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Mesh (EX9.Geometry Collada)" filename="%VVVV%\lib\nodes\plugins\ColladaLoader.dll" nodename="Mesh (EX9.Geometry Collada)" componentmode="Hidden" id="211">
+   <BOUNDS type="Node" left="1755" top="2160" width="2070" height="270">
+   </BOUNDS>
+   <PIN pinname="COLLADA Model" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Transforms" visible="1">
+   </PIN>
+   <PIN pinname="Skinning Transforms" visible="1">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Bin Size" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Inverse Bind Pose Transforms" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Bind Shape Transform" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Bone Names" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Opaque" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Power" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Specular Color" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Diffuse Color" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Emissive Color" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="TextureFileName" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="MaterialName" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="MeshPath" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="MeshName" visible="-1" pintype="Output">
+   </PIN>
+   </NODE>
+   <NODE systemname="ColladaFile (EX9.Geometry)" filename="%VVVV%\lib\nodes\plugins\ColladaLoader.dll" nodename="ColladaFile (EX9.Geometry)" componentmode="Hidden" id="188">
+   <BOUNDS type="Node" left="1755" top="1680" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="COLLADA Model" visible="1">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Info" visible="1">
+   </PIN>
+   <PIN pinname="Coordinate system of source" slicecount="1" values="RightHanded">
+   </PIN>
+   <PIN pinname="Source up axis" slicecount="1" values="Z">
+   </PIN>
+   <PIN pinname="Source right axis" slicecount="1" values="X">
+   </PIN>
+   <PIN pinname="Source distance unit in meter" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Target up axis" slicecount="1" values="Y">
+   </PIN>
+   <PIN pinname="Target right axis" slicecount="1" values="X">
+   </PIN>
+   <PIN pinname="Target distance unit in meter" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="212" srcpinname="Output String" dstnodeid="188" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="188" srcpinname="COLLADA Model" dstnodeid="211" dstpinname="COLLADA Model">
+   </LINK>
+   <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="180">
+   <BOUNDS type="Node" left="3195" top="14385" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform In 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="IOBox (Node)" componentmode="InABox" id="424" systemname="IOBox (Node)">
+   <BOUNDS type="Box" left="1245" top="21015" width="795" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="1245" top="21015" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Descriptive Name" slicecount="1" values="Layer">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="30" srcpinname="Layer" dstnodeid="424" dstpinname="Input Node">
+   </LINK>
+   <NODE systemname="arms+hand" filename="arms+hand.v4p" nodename="arms+hand.v4p" componentmode="InAWindow" id="442">
+   <BOUNDS type="Node" left="9782" top="17448" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4360" top="10018" width="10845" height="14860">
+   </BOUNDS>
+   <BOUNDS type="Window" left="225" top="0" width="14550" height="21780">
+   </BOUNDS>
+   <PIN pinname="Layer2" visible="1">
+   </PIN>
+   <PIN pinname="Left Hand" visible="1" slicecount="3" values="-0.3,0,-0.3">
+   </PIN>
+   <PIN pinname="HandRight" visible="1" slicecount="3" values="-0.3,0,-0.3">
+   </PIN>
+   <PIN pinname="Transform 1 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="hands" visible="1" slicecount="6" values="-0.7712,-2.1894,0.70625,-1.5786,0.1784,1.1445">
+   </PIN>
+   <PIN pinname="SkinningTransf" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="InverseBindPose" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="442" srcpinname="Layer" dstnodeid="30" dstpinname="Layer 5">
+   </LINK>
+   <LINK srcnodeid="442" srcpinname="Layer2" dstnodeid="30" dstpinname="Layer 6">
+   </LINK>
+   <LINK srcnodeid="211" srcpinname="Bind Shape Transform" dstnodeid="180" dstpinname="Transform In 1">
+   </LINK>
+   <NODE systemname="PlayaMovement" filename="PlayaMovement.v4p" componentmode="InAWindow" id="523" nodename="PlayaMovement.v4p">
+   <BOUNDS type="Node" left="9750" top="8115" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9750" top="8115" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="225" top="0" width="14550" height="21780">
+   </BOUNDS>
+   <PIN pinname="Transform In 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="playaHandAdaption" filename="playaHandAdaption.v4p" nodename="playaHandAdaption.v4p" componentmode="InAWindow" id="537">
+   <BOUNDS type="Node" left="10745" top="11652" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="8848" top="8187" width="3795" height="6930">
+   </BOUNDS>
+   <BOUNDS type="Window" left="14520" top="13770" width="6825" height="7530">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="537" srcpinname="Y Output Value" dstnodeid="442" dstpinname="hands">
+   </LINK>
+   <NODE systemname="PlayaSkelettAnim" filename="PlayaSkelettAnim.v4p" componentmode="InAWindow" id="543" nodename="PlayaSkelettAnim.v4p">
+   <BOUNDS type="Node" left="3480" top="13530" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="3480" top="13530" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="225" top="0" width="14550" height="21780">
+   </BOUNDS>
+   <PIN pinname="COLLADA Model" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Bind Pose Transforms" visible="1">
+   </PIN>
+   <PIN pinname="Bone Names" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Playa.ID" visible="1">
+   </PIN>
+   <PIN pinname="NormalizedBeugen" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="188" srcpinname="COLLADA Model" dstnodeid="543" dstpinname="COLLADA Model">
+   </LINK>
+   <LINK srcnodeid="211" srcpinname="Inverse Bind Pose Transforms" dstnodeid="543" dstpinname="Inverse Bind Pose Transforms">
+   </LINK>
+   <LINK srcnodeid="211" srcpinname="Bone Names" dstnodeid="543" dstpinname="Bone Names">
+   </LINK>
+   <LINK srcnodeid="543" srcpinname="Transform" dstnodeid="180" dstpinname="Transform In 2">
+   </LINK>
+   <NODE systemname="character_shading" filename="character_shading.v4p" nodename="character_shading.v4p" componentmode="Hidden" id="560">
+   <BOUNDS type="Node" left="1755" top="16740" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="1755" top="16740" width="5545" height="6790">
+   </BOUNDS>
+   <BOUNDS type="Window" left="-1" top="-1" width="5545" height="6790">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="211" srcpinname="Mesh" dstnodeid="560" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="180" srcpinname="Transform Out" dstnodeid="560" dstpinname="SkinningMatrices">
+   </LINK>
+   <NODE systemname="Group (EX9)" nodename="Group (EX9)" componentmode="Hidden" id="561">
+   <BOUNDS type="Node" left="3135" top="18825" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Layer 1" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Layer 2" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="560" srcpinname="Layer" dstnodeid="561" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="561" srcpinname="Layer" dstnodeid="30" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="character_shading" filename="character_shading.v4p" nodename="character_shading.v4p" componentmode="Hidden" id="562">
+   <BOUNDS type="Node" left="5100" top="16740" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5100" top="16740" width="5545" height="6790">
+   </BOUNDS>
+   <BOUNDS type="Window" left="-1" top="-1" width="5545" height="6790">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="SkinningMatrices" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mesh" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Color Transform" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="562" srcpinname="Layer" dstnodeid="561" dstpinname="Layer 2">
+   </LINK>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="563">
+   <BOUNDS type="Node" left="2490" top="13020" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="523" srcpinname="Transform Out" dstnodeid="563" dstpinname="Input Node">
+   </LINK>
+   <LINK srcnodeid="563" srcpinname="Output Node" dstnodeid="560" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="564" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="4875" top="12420" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="4875" top="12420" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="564" srcpinname="Y Output Value" dstnodeid="563" dstpinname="Index" linkstyle="VHV">
+   <LINKPOINT x="4875" y="12825">
+   </LINKPOINT>
+   <LINKPOINT x="3165" y="12825">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="GetSlice (Node)" nodename="GetSlice (Node)" componentmode="Hidden" id="566">
+   <BOUNDS type="Node" left="5790" top="13035" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input Node" visible="1">
+   </PIN>
+   <PIN pinname="Output Node" visible="1">
+   </PIN>
+   <PIN pinname="Index" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="523" srcpinname="Transform Out" dstnodeid="566" dstpinname="Input Node">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="565" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="8205" top="12450" width="285" height="240">
+   </BOUNDS>
+   <BOUNDS type="Node" left="8205" top="12450" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="1">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Integer">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="565" srcpinname="Y Output Value" dstnodeid="566" dstpinname="Index" linkstyle="VHV">
+   <LINKPOINT x="8235" y="14190">
+   </LINKPOINT>
+   <LINKPOINT x="6435" y="13440">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="566" srcpinname="Output Node" dstnodeid="562" dstpinname="Transform">
+   </LINK>
+   <NODE systemname="helper_hands" filename="..\helper\helper_hands.v4p" nodename="..\helper\helper_hands.v4p" componentmode="Hidden" id="567" hiddenwhenlocked="1">
+   <BOUNDS type="Node" left="5040" top="19359" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2993" top="16819" width="4095" height="5080">
+   </BOUNDS>
+   <BOUNDS type="Window" left="16500" top="11430" width="4095" height="5070">
+   </BOUNDS>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="563" srcpinname="Output Node" dstnodeid="567" dstpinname="Transform In" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="537" srcpinname="Y Output Value" dstnodeid="567" dstpinname="Translate XYZ" hiddenwhenlocked="1">
+   </LINK>
+   <LINK srcnodeid="567" srcpinname="Layer" dstnodeid="30" dstpinname="Layer 3">
+   </LINK>
+   <NODE nodename="IOBox (Value Advanced)" componentmode="InABox" id="568" systemname="IOBox (Value Advanced)">
+   <BOUNDS type="Box" left="5070" top="18750" width="480" height="480">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5070" top="18750" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" slicecount="1" visible="1" values="0">
+   </PIN>
+   <PIN pinname="Units" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Precision" slicecount="1" values="4">
+   </PIN>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="568" srcpinname="Y Output Value" dstnodeid="567" dstpinname="Enabled">
+   </LINK>
+   <NODE systemname="untergrund" filename="untergrund.v4p" nodename="untergrund.v4p" componentmode="Hidden" id="569">
+   <BOUNDS type="Node" left="1272" top="19479" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="0" top="17397" width="4065" height="4165">
+   </BOUNDS>
+   <BOUNDS type="Window" left="24735" top="14850" width="4065" height="4155">
+   </BOUNDS>
+   </NODE>
+   <LINK srcnodeid="569" srcpinname="Layer" dstnodeid="30" dstpinname="Layer 1">
+   </LINK>
+   <LINK srcnodeid="523" srcpinname="Transform Out" dstnodeid="442" dstpinname="Playa.transf">
+   </LINK>
+   <NODE systemname="Multiply (Transform)" nodename="Multiply (Transform)" componentmode="Hidden" id="571">
+   <BOUNDS type="Node" left="6525" top="14430" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Transform In 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform In 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="PlayaSkelettAnim" filename="PlayaSkelettAnim.v4p" componentmode="Hidden" id="570" nodename="PlayaSkelettAnim.v4p">
+   <BOUNDS type="Node" left="6810" top="13530" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6810" top="13530" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="225" top="0" width="14355" height="21780">
+   </BOUNDS>
+   <PIN pinname="COLLADA Model" visible="1">
+   </PIN>
+   <PIN pinname="Inverse Bind Pose Transforms" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Bone Names" visible="1" slicecount="7" values="Bone,Bone_001,Bone_002,Bone_003,Bone_004,Bone_005,Bone_006">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Playa.ID" visible="1">
+   </PIN>
+   <PIN pinname="NormalizedBeugen" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="188" srcpinname="COLLADA Model" dstnodeid="570" dstpinname="COLLADA Model">
+   </LINK>
+   <LINK srcnodeid="570" srcpinname="Transform" dstnodeid="571" dstpinname="Transform In 2">
+   </LINK>
+   <LINK srcnodeid="571" srcpinname="Transform Out" dstnodeid="562" dstpinname="SkinningMatrices">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="572" systemname="IOBox (String)">
+   <BOUNDS type="Node" left="4860" top="12045" width="300" height="270">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4860" top="12045" width="300" height="270">
+   </BOUNDS>
+   <PIN pinname="Input String" visible="0" slicecount="1" values="ID">
+   </PIN>
+   <PIN pinname="Output String" visible="0">
+   </PIN>
+   <PIN pinname="Show Grid" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="MultiLine">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="564" srcpinname="Y Output Value" dstnodeid="543" dstpinname="Playa.ID" linkstyle="VHV">
+   <LINKPOINT x="4905" y="13095">
+   </LINKPOINT>
+   <LINKPOINT x="4905" y="13095">
+   </LINKPOINT>
+   </LINK>
+   <LINK srcnodeid="565" srcpinname="Y Output Value" dstnodeid="570" dstpinname="Playa.ID" linkstyle="VHV">
+   <LINKPOINT x="8235" y="13110">
+   </LINKPOINT>
+   <LINKPOINT x="8235" y="13110">
+   </LINKPOINT>
+   </LINK>
+   <NODE systemname="Cons (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Transform)" componentmode="Hidden" id="573">
+   <BOUNDS type="Node" left="9750" top="7395" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="211" srcpinname="Transforms" dstnodeid="573" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="573" srcpinname="Output" dstnodeid="523" dstpinname="Transform In 2">
+   </LINK>
+   <NODE systemname="Cons (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Transform)" componentmode="Hidden" id="574">
+   <BOUNDS type="Node" left="10110" top="16485" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="180" srcpinname="Transform Out" dstnodeid="574" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="571" srcpinname="Transform Out" dstnodeid="574" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="574" srcpinname="Output" dstnodeid="442" dstpinname="SkinningTransf">
+   </LINK>
+   <NODE nodename="IOBox (String)" componentmode="InABox" id="577" systemname="IOBox (String)">
+   <BOUNDS type="Box" left="5520" top="1170" width="1725" height="255">
+   </BOUNDS>
+   <BOUNDS type="Node" left="5520" top="1170" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" visible="1" values="..\..\3dobj\sadsack_Beta_birne01.dae">
+   </PIN>
+   <PIN pinname="Default" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="File Mask" slicecount="1" values="|COLLADA Files (*.dae)||*.dae|">
+   </PIN>
+   <PIN pinname="Maximum Characters" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="String Type" slicecount="1" values="Filename">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Mesh (EX9.Geometry Collada)" filename="%VVVV%\lib\nodes\plugins\ColladaLoader.dll" nodename="Mesh (EX9.Geometry Collada)" componentmode="Hidden" id="576">
+   <BOUNDS type="Node" left="5505" top="2160" width="2070" height="270">
+   </BOUNDS>
+   <PIN pinname="COLLADA Model" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Transforms" visible="1">
+   </PIN>
+   <PIN pinname="Skinning Transforms" visible="1">
+   </PIN>
+   <PIN pinname="Time" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Bin Size" slicecount="1" values="-1">
+   </PIN>
+   <PIN pinname="Inverse Bind Pose Transforms" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Bind Shape Transform" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Bone Names" visible="1" pintype="Output">
+   </PIN>
+   <PIN pinname="Opaque" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Power" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Specular Color" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Diffuse Color" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="Emissive Color" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="TextureFileName" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="MaterialName" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="MeshPath" visible="-1" pintype="Output">
+   </PIN>
+   <PIN pinname="MeshName" visible="-1" pintype="Output">
+   </PIN>
+   </NODE>
+   <NODE systemname="ColladaFile (EX9.Geometry)" filename="%VVVV%\lib\nodes\plugins\ColladaLoader.dll" nodename="ColladaFile (EX9.Geometry)" componentmode="Hidden" id="575">
+   <BOUNDS type="Node" left="5505" top="1680" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Filename" visible="1">
+   </PIN>
+   <PIN pinname="COLLADA Model" visible="1">
+   </PIN>
+   <PIN pinname="Reload" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Info" visible="1">
+   </PIN>
+   <PIN pinname="Coordinate system of source" slicecount="1" values="RightHanded">
+   </PIN>
+   <PIN pinname="Source up axis" slicecount="1" values="Z">
+   </PIN>
+   <PIN pinname="Source right axis" slicecount="1" values="X">
+   </PIN>
+   <PIN pinname="Source distance unit in meter" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Target up axis" slicecount="1" values="Y">
+   </PIN>
+   <PIN pinname="Target right axis" slicecount="1" values="X">
+   </PIN>
+   <PIN pinname="Target distance unit in meter" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="577" srcpinname="Output String" dstnodeid="575" dstpinname="Filename">
+   </LINK>
+   <LINK srcnodeid="575" srcpinname="COLLADA Model" dstnodeid="576" dstpinname="COLLADA Model">
+   </LINK>
+   <LINK srcnodeid="576" srcpinname="Mesh" dstnodeid="562" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="576" srcpinname="Transforms" dstnodeid="573" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="576" srcpinname="Inverse Bind Pose Transforms" dstnodeid="570" dstpinname="Inverse Bind Pose Transforms">
+   </LINK>
+   <NODE systemname="Cons (Transform)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Transform)" componentmode="Hidden" id="578">
+   <BOUNDS type="Node" left="11010" top="16440" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Input 2" visible="1" slicecount="1" values="||">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="211" srcpinname="Inverse Bind Pose Transforms" dstnodeid="578" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="576" srcpinname="Inverse Bind Pose Transforms" dstnodeid="578" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="578" srcpinname="Output" dstnodeid="442" dstpinname="InverseBindPose">
+   </LINK>
+   <LINK srcnodeid="576" srcpinname="Bind Shape Transform" dstnodeid="571" dstpinname="Transform In 1">
+   </LINK>
+   <LINK srcnodeid="576" srcpinname="Bone Names" dstnodeid="570" dstpinname="Bone Names">
+   </LINK>
+   <NODE systemname="HSL (Transform)" nodename="HSL (Transform)" componentmode="Hidden" id="579">
+   <BOUNDS type="Node" left="6540" top="16380" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Lightness Min" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Hue" slicecount="1" values="0.79">
+   </PIN>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="Saturation" slicecount="1" values="0.29">
+   </PIN>
+   <PIN pinname="Lightness Max" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="579" srcpinname="Transform Out" dstnodeid="562" dstpinname="Color Transform">
+   </LINK>
+   <NODE systemname="Collision" filename="..\collision\Collision.v4p" componentmode="InAWindow" id="580" nodename="..\collision\Collision.v4p" debug="0">
+   <BOUNDS type="Node" left="6900" top="18675" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="6900" top="18675" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="225" top="0" width="14550" height="21780">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform In" visible="1">
+   </PIN>
+   <PIN pinname="normalizedBeugen" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="580" srcpinname="Layer" dstnodeid="30" dstpinname="Layer 4">
+   </LINK>
+   <LINK srcnodeid="523" srcpinname="Transform Out" dstnodeid="580" dstpinname="Transform In">
+   </LINK>
+   <NODE systemname="Cons (Spreads)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Cons (Spreads)" componentmode="Hidden" id="581">
+   <BOUNDS type="Node" left="7770" top="14220" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Input 1" visible="1">
+   </PIN>
+   <PIN pinname="Input 2" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="543" srcpinname="NormalizedBeugen" dstnodeid="581" dstpinname="Input 1">
+   </LINK>
+   <LINK srcnodeid="570" srcpinname="NormalizedBeugen" dstnodeid="581" dstpinname="Input 2">
+   </LINK>
+   <LINK srcnodeid="581" srcpinname="Output" dstnodeid="580" dstpinname="normalizedBeugen">
+   </LINK>
+   </PATCH>
